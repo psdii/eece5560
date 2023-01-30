@@ -1,5 +1,5 @@
 # parameters
-ARG REPO_NAME="eece5560-myron-repo"
+ARG REPO_NAME="eece5560"
 ARG DESCRIPTION="Repo for Myron UML EECE 5560"
 ARG MAINTAINER="Myron Chee (myron_chee@student.uml.edu)"
 # pick an icon from: https://fontawesome.com/v4.7.0/icons/

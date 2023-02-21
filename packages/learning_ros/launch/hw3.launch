@@ -1,8 +1,7 @@
 <launch>
 	<include file = "$(find turtlesim_helper)/launch/turtlesim.launch"/>
-	<node pkg ="learning_ros" type ="hw2.py" name ="hw.2"/>
+	<node pkg ="learning_ros" type ="hw2.py" name ="hw2"/>
 	<node pkg ="learning_ros" type ="distance.py" name ="distance"/>
 	<node pkg ="rostopic" type ="rostopic" name ="rostopic" output ="screen" args ="echo distance"/>
 	<node pkg ="rqt_graph" name= "rqt_graph" type ="rqt_graph"/>
-	
 </launch>

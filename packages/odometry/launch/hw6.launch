@@ -1,0 +1,4 @@
+<launch>
+	<include file="$(find odometry_hw)/launch/odom_hw.launch" package="odometry_hw"/>
+	<node pkg="odometry" type="odometry.py" name="odometry"/>
+</launch>

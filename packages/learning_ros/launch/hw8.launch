@@ -1,0 +1,5 @@
+<launch>
+	<include file="$(find learning_ros)/launch/hw7.launch" package="learning_ros"/>
+	<node pkg="learning_ros" type="edgedetect.py" name="edgedetect"/>
+	<node pkg="rqt_image_view" type="rqt_image_view" name="image_view_edges" args="/image_edges"/>
+</launch>

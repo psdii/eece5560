@@ -1,0 +1,6 @@
+<launch>
+	<node pkg ="pidcontroller" type ="pid.py" name ="pid"/>
+	<node pkg ="controls_hw" type ="vehicle_dynamics.py" name ="vehicle_dynamics"/>
+	<node pkg ="controls_hw" type ="controls_graph.py" name ="controls_graph"/>
+	<param name ="controller_ready" type ="str" value ="true"/>
+</launch>

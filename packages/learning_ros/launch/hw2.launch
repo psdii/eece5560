@@ -1,10 +1,10 @@
 <launch>
 
-<include file="$(find turtlesim_helper)/launch/turtlesim.launch"/>
+	<include file="$(find turtlesim_helper)/launch/turtlesim.launch"/>
 
-<group ns="learning_ros">
+	<group ns="learning_ros">
 
-<node pkg="learning_ros" type="hw2.py" name="hw2"/>
+	<node pkg="learning_ros" type="rombiesquare.py" name="rombiesqaure"/>
 
 </group>
 </launch>

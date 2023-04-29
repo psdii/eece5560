@@ -6,8 +6,8 @@ class pidController:
 	def callback(self, data) :
 		pub = rospy.Publisher('/control_input', Float32, queue_size=1)
 		errorVal = data.data
-		kp = 0.28
-		ki = 0.1
+		kp = 0.27
+		ki = 0.11
 		kd = 0.56
 		self.t0 = rospy.get_time()
 		dt = self.t0 - self.t1

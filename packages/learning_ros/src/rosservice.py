@@ -35,20 +35,29 @@ def service_proxy(x):
 if __name__ == '__main__':
     try:
         rospy.init_node('rosservice')
-        it = time.time()
         
+        it = time.time()
         serve = service_proxy(3)
         rospy.loginfo(serve)
+        t = time.time() - it
+        rospy.loginfo(t)
+        
+        it = time.time()
         serve = service_proxy(15)
         rospy.loginfo(serve)
+        t = time.time() - it
+        rospy.loginfo(t)
         
+        it = time.time()
         act = action_proxy(3)
         rospy.loginfo(act)
+        t = time.time() - it
+        rospy.loginfo(t)
+        
+        it = time.time()
         act = action_proxy(15)
         rospy.loginfo(act)
-        
-        ft = time.time()
-        t = ft - it
+        t = time.time() - it
         rospy.loginfo(t)
         
     except rospy.ROSInterruptException:

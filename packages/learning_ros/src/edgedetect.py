@@ -5,6 +5,7 @@ from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 
 class edgedetect:
+    global ros_edges
     def __init__(self):
         rospy.Subscriber("/image_cropped", Image, self.edges_cb)
         rospy.Subscriber("/image_yellow", Image, self.yellowedges_cb)
@@ -21,13 +22,12 @@ class edgedetect:
         # convert to a ROS image using the bridge
         cv_img = self.bridge.imgmsg_to_cv2(msg, "bgr8")
         cv_edges = cv2.Canny(cv_img, 100, 200)
-        
         ros_edges = self.bridge.cv2_to_imgmsg(cv_edges, "mono8")
         
         self.pub1.publish(ros_edges)
     def yellowedges_cb(self, msg):
         # convert to a ROS image using the bridge
-        cv_img = self.bridge.imgmsg_to_cv2(msg, "bgr8")
+        cv_img = self.bridge.imgmsg_to_cv2(msg, "mono8")
         cv_edges = cv2.Canny(cv_img, 100, 200)
         ros_edges = self.bridge.cv2_to_imgmsg(cv_edges, "mono8")
 
@@ -40,6 +40,10 @@ class edgedetect:
         ros_edges = self.bridge.cv2_to_imgmsg(cv_edges, "mono8")
 
         self.pub3.publish(ros_edges)
+    '''
+    def houghtransform():    
+        cv2.HoughLines(image, rho, theta, threshold[, lines[, srn[, stn]]])
+    '''
 
 if __name__=="__main__":
     # initialize our node and create a publisher as normal

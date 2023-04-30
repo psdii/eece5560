@@ -1,0 +1,6 @@
+<launch>
+	<include file="$(find example_service)/launch/fibonacci.launch" package="example_service"/>
+	<include file="$(find example_action_server)/launch/fibonacci.launch" package="example_action_server"/>
+	<node name="rqt_console" pkg="rqt_console" type="rqt_console" />
+	<node pkg="learning_ros" type="rosservice.py" name="rosservice"/>	
+</launch>

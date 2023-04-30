@@ -20,10 +20,10 @@ class ImageCropper:
         cv_cropped = cv_img[240:480, 0:640]
         hsv_cropped = cv2.cvtColor(cv_cropped, cv2.COLOR_BGR2HSV)
         ros_cropped = self.bridge.cv2_to_imgmsg(cv_cropped, "bgr8")
-        x = 40
+        x = 80
         hsv_filterwhite = cv2.inRange(hsv_cropped, (0,0,255-x), (255,x,255))
         ros_white = self.bridge.cv2_to_imgmsg(hsv_filterwhite, "mono8")
-        hsv_filteryellow = cv2.inRange(hsv_cropped, (0,120,120), (50,255,255))
+        hsv_filteryellow = cv2.inRange(hsv_cropped, (0,110,110), (40,255,255))
         ros_yellow = self.bridge.cv2_to_imgmsg(hsv_filteryellow, "mono8")
         
         # publish flipped image
